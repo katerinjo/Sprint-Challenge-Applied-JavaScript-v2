@@ -9,4 +9,20 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-function Header() {}
+function Header(data) {
+    const [outer, date, title, temperature] =
+        ['div', 'span', 'h1', 'span'].forEach(tag => document.createElement(tag))
+
+    date.textContent = data.date
+    title.textContent = data.title
+    temperature.textContent = data.temperature
+
+    outer.classList.append('header')
+    date.classList.append('date')
+    temperature.classList.append('temp')
+
+        ;
+    [date, title, temperature].forEach(outer.appendChild)
+
+    return outer
+}
