@@ -10,7 +10,8 @@
 // And add it to the DOM in the .headerContainer component
 
 function Header(data) {
-    const [outer, date, title, temperature] = ['div', 'span', 'h1', 'span'].map(tag => document.createElement(tag))
+    const [outer, date, title, temperature] =
+        ['div', 'span', 'h1', 'span'].map(document.createElement.bind(document))
 
     date.textContent = data.date
     title.textContent = data.title
